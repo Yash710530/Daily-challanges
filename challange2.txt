@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int findMissingSorted(vector<int>& arr) {
+    int n = arr.size() + 1;  
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i] != i + 1) {
+            return i + 1;   
+        }
+    }
+    return n; 
+}
+
+int main() {
+    vector<int> arr = {1, 2, 4, 5};
+    cout << "Missing number: " << findMissingSorted(arr) << endl;
+    return 0;
+}
